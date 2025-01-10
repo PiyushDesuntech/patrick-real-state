@@ -10,9 +10,9 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import WestIcon from '@mui/icons-material/West';
+import EastIcon from '@mui/icons-material/East';
 
 const ClientStories = () => {
   const theme = useTheme();
@@ -66,12 +66,12 @@ const ClientStories = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Container>
-        <Box mb={4} textAlign="center">
-          <Typography variant="h5" fontWeight="bold">
+      <Container maxWidth="xl" sx={{px: {md: 8}, mt: 8}}>
+        <Box textAlign="center">
+          <Typography variant="h5" fontWeight="semibold" sx={{fontSize: "40px"}}>
             Client Stories
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body2" sx={{fontSize: "16px"}}>
             Morbi at felis ullamcorper ipsum tsed sed mi.
           </Typography>
         </Box>
@@ -83,10 +83,10 @@ const ClientStories = () => {
         >
           <Grid item xs={12} md={4}>
             <Box display="flex" flexDirection="column" justifyContent="space-between" height="100%">
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
+              <Typography variant="h4" fontWeight="semibold" gutterBottom sx={{fontSize: "40px"}}>
                 {current.title}
               </Typography>
-              <Box mt={4}>
+              <Box mt={10}>
                 <Button
                   variant="contained"
                   sx={{
@@ -104,13 +104,13 @@ const ClientStories = () => {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Box sx={{display: "flex", flexDirection: "column", justifyContent: "flex-end", alignItems: "flex-end", mt: 10}}>
+            <Box sx={{display: "flex", flexDirection: "column", justifyContent: "flex-end", alignItems: "flex-end", mb: 4 }}>
             <img
               src={current.image}
               alt={current.clientName}
               style={{
                 maxWidth: "100%",
-                maxHeight: isSmallScreen ? "200px" : "390px",
+                maxHeight: isSmallScreen ? "200px" : "593px",
                 borderRadius: "8px",
               }}
             />
@@ -141,7 +141,7 @@ const ClientStories = () => {
                   px: 2,
                 }}
               >
-                <ArrowBackIosIcon />
+                <WestIcon />
               </IconButton>
               <IconButton
                 onClick={handleNext}
@@ -153,7 +153,7 @@ const ClientStories = () => {
                   px: 2,
                 }}
               >
-                <ArrowForwardIosIcon />
+                <EastIcon />
               </IconButton>
             </Box>
             </Box>

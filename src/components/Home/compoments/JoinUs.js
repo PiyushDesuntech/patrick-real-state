@@ -9,58 +9,68 @@ export default function JoinUs() {
         mt: 10,
       }}
     >
-      <Container>
-        <Grid container>
+      <Container maxWidth="xl">
+        <Grid container sx={{px: {md: 7}, py: 4}}>
           <Grid item sm={7} xs={12} sx={{ color: "#fff" }}>
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                py: 8,
+                py: 10,
+                gap: 2
               }}
             >
-              <Typography variant="h4">
+              <Typography variant="h4" sx={{fontSize: "40px"}}>
                 Join With Us & Have your Dream Home
               </Typography>
-              <Typography variant="body2">
+              <Typography variant="body2" sx={{fontSize: "16px"}}>
                 Maecenas pharetra neque maximus nunc semper, in faucibus quam
                 facilisis.
               </Typography>
             </Box>
           </Grid>
-          <Grid item sm={5} xs={12}>
+          <Grid item sm={5} xs={12} sx={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
             <Box
               sx={{
                 display: "flex",
-                gap: 2,
-                justifyContent: "center",
+                gap: 3,
+                justifyContent: "flex-end",
                 alignItems: "center",
                 py: 9,
                 flexWrap: "wrap"
               }}
             >
               <Button
-                variant="outlined"
+                variant="contained"
                 sx={{
-                  backgroundColor: "#FEFEFE",
-                  "&:hover": { backgroundColor: "#E8E1C4" },
+                  backgroundColor: "#E0D8C3",
+                  "&:hover": {
+                    backgroundColor: "#4D4D4D",
+                    color: "#fff",
+                  },
                   color: "#000",
-                  border: "2px solid black",
+                  minWidth: "233px",
+                  height: "53px",
                   textTransform: "none",
+                 
                 }}
               >
                 Contact With Us
               </Button>
               <Button
-                variant="outlined"
-                sx={{
-                  backgroundColor: "#FEFEFE",
-                  "&:hover": { backgroundColor: "#E8E1C4" },
-                  color: "#000",
-                  border: "2px solid black",
+                 variant="contained"
+                 sx={{
                   textTransform: "none",
-                }}
+                   backgroundColor: "#E0D8C3",
+                   "&:hover": {
+                     backgroundColor: "#4D4D4D",
+                     color: "#fff",
+                   },
+                   color: "#000",
+                   minWidth: "233px",
+                   height: "53px",
+                 }}
               >
                 Know More
               </Button>

@@ -61,22 +61,23 @@ const data = [
   },
 ];
 
-// Custom Previous Arrow
-// Custom Previous Arrow
 const PrevArrow = ({ onClick }) => {
   return (
     <IconButton
       onClick={onClick}
       sx={{
         position: "absolute",
-        left: { xs: "-0px", sm: "-10px", md: "-20px" }, // Adjust left position for responsiveness
+        left: { xs: "-15px", sm: "-15px", md: "-50px" },
         top: "50%",
         transform: "translateY(-50%)",
         zIndex: 10,
         backgroundColor: "#fff",
-        boxShadow: 2,
+        color: "#D9D9D9",
+        border: "2px solid #D9D9D9",
         "&:hover": {
           backgroundColor: "#f0f0f0",
+          border: "2px solid #000000",
+          color: "#000000",
         },
       }}
     >
@@ -85,21 +86,23 @@ const PrevArrow = ({ onClick }) => {
   );
 };
 
-// Custom Next Arrow
 const NextArrow = ({ onClick }) => {
   return (
     <IconButton
       onClick={onClick}
       sx={{
         position: "absolute",
-        right: { xs: "-00px", sm: "-10px", md: "-20px" }, // Adjust right position for responsiveness
+        right: { xs: "-15px", sm: "-15px", md: "-50px" },
         top: "50%",
         transform: "translateY(-50%)",
         zIndex: 10,
         backgroundColor: "#fff",
-        boxShadow: 2,
+        color: "#D9D9D9",
+        border: "2px solid #D9D9D9",
         "&:hover": {
           backgroundColor: "#f0f0f0",
+          border: "2px solid #000000",
+          color: "#000000",
         },
       }}
     >
@@ -134,8 +137,8 @@ const FeatureProperties = () => {
   };
 
   return (
-    <Container>
-      <Box sx={{ mt: 4, mb: 2 }}>
+    <Container maxWidth="xl">
+      <Box sx={{ mt: 4, mb: 2, px:{lg: 8} }}>
         <Typography sx={{ textAlign: "center" }} variant="h4">
           Featured Properties.
         </Typography>
@@ -144,22 +147,26 @@ const FeatureProperties = () => {
         </Typography>
         <Slider {...settings}>
           {data.map((item, index) => (
-            <Box key={index} p={1} mt={3}>
+            <Box key={index} p={1} mt={3} sx={{p:{xs: 4}}}>
               <Card
                 sx={{
                   borderRadius: 2,
                   overflow: "hidden",
                   boxShadow: 3,
                   backgroundImage: `url(${item.image})`,
-                  backgroundSize: "cover",
+                  backgroundSize: "cover", // Start with cover size
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  height: "350px",
+                  height: {xs:"280px",md: "387px"},
                   width: "100%",
                   color: "#fff",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  transition: "background-size 0.5s ease-in-out", // Smooth transition for background size
+                  "&:hover": {
+                    backgroundSize: "130%", // Increase background size on hover to zoom in
+                  },
                 }}
               >
                 <Box sx={{ display: "flex", gap: 1, m: 2 }}>
@@ -189,26 +196,56 @@ const FeatureProperties = () => {
                   <Typography variant="body1" mt={1}>
                     {item.price}
                   </Typography>
-                 <Box sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}> 
-                 <Typography variant="body2" mt={1} sx={{fontSize: "12px"}}>
-                    Beds: {item.beds} • Baths: {item.baths} • Sqft: {item.sqft}
-                  </Typography>
-                  <Box sx={{ display: "flex" }}>
-                    <IconButton>
-                      <FavoriteBorderIcon sx={{ color: "#fff", fontSize: "16px" }} />
-                    </IconButton>
-                    <IconButton>
-                      <ShareIcon sx={{ color: "#fff", fontSize: "16px" }} />
-                    </IconButton>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Typography
+                      variant="body2"
+                      mt={1}
+                      sx={{ fontSize: "12px" }}
+                    >
+                      Beds: {item.beds} • Baths: {item.baths} • Sqft:{" "}
+                      {item.sqft}
+                    </Typography>
+                    <Box sx={{ display: "flex" }}>
+                      <IconButton>
+                        <FavoriteBorderIcon
+                          sx={{ color: "#fff", fontSize: "16px" }}
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <ShareIcon sx={{ color: "#fff", fontSize: "16px" }} />
+                      </IconButton>
+                    </Box>
                   </Box>
-                 </Box>
                 </CardContent>
               </Card>
             </Box>
           ))}
         </Slider>
-        <Box sx={{display: "flex", justifyContent: "center", mt: 3}}>
-            <Button variant="outlined" sx={{textTransform: "none"}}>View More</Button>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 3.8 }}>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#fff",
+              boxShadow: "none",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "#fff",
+              },
+              color: "#000",
+              border: "2px solid #000",
+              textTransform: "none",
+              px: 5,
+              py: 1,
+            }}
+          >
+            View More
+          </Button>
         </Box>
       </Box>
     </Container>

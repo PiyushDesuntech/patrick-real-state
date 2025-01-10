@@ -1,10 +1,18 @@
-"use client"
-import React, { useState } from 'react';
-import { ToggleButton, ToggleButtonGroup, Box, TextField, Button, Autocomplete, Grid } from '@mui/material';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+"use client";
+import React, { useState } from "react";
+import {
+  ToggleButton,
+  ToggleButtonGroup,
+  Box,
+  TextField,
+  Button,
+  Autocomplete,
+  Grid,
+} from "@mui/material";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const PropertySearch = () => {
-  const [selectedTab, setSelectedTab] = useState('buy');
+  const [selectedTab, setSelectedTab] = useState("buy");
 
   const handleTabChange = (event, newTab) => {
     if (newTab !== null) {
@@ -13,163 +21,272 @@ const PropertySearch = () => {
   };
 
   // Sample options for Autocomplete fields
-  const propertyTypes = ['House', 'Apartment', 'Studio', 'Villa'];
-  const locations = ['New York', 'Los Angeles', 'Chicago', 'Houston'];
-  const priceRange = ['1000-2000', '2000-5000'];
+  const propertyTypes = ["House", "Apartment", "Studio", "Villa"];
+  const locations = ["New York", "Los Angeles", "Chicago", "Houston"];
+  const priceRange = ["1000-2000", "2000-5000"];
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, p: {xs: 2} }}>
-      {/* Tabs */}
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        p: { xs: "0 5px 5px 5px" },
+        mt: { xs: 0, sm: 4 },
+      }}
+    >
       <ToggleButtonGroup
         value={selectedTab}
         exclusive
         onChange={handleTabChange}
         sx={{
-            display: "flex",
-            gap: 3,
+          display: "flex",
+          gap: 0,
         }}
-        
       >
-        <Box sx={{
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-        }}>
-        <ToggleButton
-          value="buy"
-          sx={{
-            textTransform: 'none',
-            fontWeight: selectedTab === 'buy' ? 'bold' : 'normal',
-            padding: '8px 16px',
-          }}
-        >
-          Buy
-        </ToggleButton>
+        <Box>
+          <ToggleButton
+            value="buy"
+            sx={{
+              position: "relative",
+              backgroundColor: selectedTab === "buy" ? "#E8E1C4" : "white",
+              color: selectedTab === "buy" ? "black" : "#000",
+              textTransform: "none",
+              flex: 1,
+              padding: "12px 26px",
+              border: "none",
+              borderRadius: "8px 8px 8px 8px",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "white",
+              },
+              "&.Mui-selected": {
+                backgroundColor: "#E8E1C4",
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "#4D4D4D",
+                  color: "white",
+                },
+              },
+              "&::after": selectedTab === "buy" && {
+                content: '""',
+                position: "absolute",
+                bottom: "-8px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "0",
+                height: "0",
+                borderLeft: "8px solid transparent",
+                borderRight: "8px solid transparent",
+                borderTop: "8px solid #E8E1C4",
+              },
+            }}
+          >
+            Buy
+          </ToggleButton>
         </Box>
-        <Box sx={{
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-        }}>
-        <ToggleButton
-          value="rent"
-          sx={{
-            textTransform: 'none',
-            fontWeight: selectedTab === 'rent' ? 'bold' : 'normal',
-            padding: '8px 16px',
-          }}
-        >
-          Rent
-        </ToggleButton>
+
+        <Box>
+          <ToggleButton
+            value="rent"
+            sx={{
+              position: "relative",
+              backgroundColor: selectedTab === "rent" ? "#E8E1C4" : "white",
+              color: selectedTab === "rent" ? "black" : "#000",
+              textTransform: "none",
+              flex: 1,
+              padding: "12px 26px",
+              border: "none",
+              borderRadius: "8px 8px 8px 8px",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "white",
+              },
+              "&.Mui-selected": {
+                backgroundColor: "#E8E1C4",
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "#4D4D4D",
+                  color: "white",
+                },
+              },
+              "&::after": selectedTab === "rent" && {
+                content: '""',
+                position: "absolute",
+                bottom: "-8px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "0",
+                height: "0",
+                borderLeft: "8px solid transparent",
+                borderRight: "8px solid transparent",
+                borderTop: "8px solid #E8E1C4",
+              },
+            }}
+          >
+            Rent
+          </ToggleButton>
         </Box>
       </ToggleButtonGroup>
-
-      {/* Dynamic Content Based on Selected Tab */}
       <Box
         sx={{
-          backgroundColor: 'white',
-          padding: '16px',
-          borderRadius: '8px',
-          display: 'flex',
-          alignItems: 'center',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-          width: '100%',
-          display: "flex", justifyContent: "center",
+          p: "12px",
+          background: "rgba(255, 255, 255, 0.3)",
+          borderRadius: "10px",
         }}
       >
-        <Grid container spacing={2} alignItems="center">
-          {selectedTab === 'buy' && (
-            <>
-              <Grid item xs={12} sm={6} md={2}>
-                <TextField
-                  label="Enter Keyword..."
-                  variant="outlined"
+        <Box
+          sx={{
+            backgroundColor: "white",
+            padding: "16px",
+            borderRadius: "10px",
+            display: "flex",
+            alignItems: "center",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Grid container spacing={2} alignItems="center">
+            {selectedTab === "buy" && (
+              <>
+                <Grid item xs={12} sm={6} md={2}>
+                  <TextField
                   size="small"
-                  fullWidth
-                  sx={{ minWidth: '150px' }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={2}>
-                <Autocomplete
-                  options={propertyTypes}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Property Type" variant="outlined" size="small" sx={{ minWidth: '150px' }} />
-                  )}
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={2}>
-                <Autocomplete
-                  options={locations}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Location" variant="outlined" size="small" sx={{ minWidth: '150px' }} />
-                  )}
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={2}>
-                <Autocomplete
-                  options={priceRange}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Price Range" variant="outlined" size="small" sx={{ minWidth: '150px' }} />
-                  )}
-                  fullWidth
-                />
-              </Grid>
-            </>
-          )}
-          {selectedTab === 'rent' && (
-            <>
-              <Grid item xs={12} sm={6} md={2}>
-                <TextField
-                  label="Enter Keyword..."
-                  variant="outlined"
+                    label="Enter Keyword..."
+                    variant="outlined"
+                    fullWidth
+                    sx={{ minWidth: "150px" }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Autocomplete
+                    options={propertyTypes}
+                    size="small"
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Property Type"
+                        variant="outlined"
+                        sx={{ minWidth: "150px" }}
+                      />
+                    )}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Autocomplete
+                    options={locations}
+                    size="small"
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Location"
+                        variant="outlined"
+                        sx={{ minWidth: "150px" }}
+                      />
+                    )}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Autocomplete
+                    options={priceRange}
+                    size="small"
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Price Range"
+                        variant="outlined"
+                        sx={{ minWidth: "150px" }}
+                      />
+                    )}
+                    fullWidth
+                  />
+                </Grid>
+              </>
+            )}
+            {selectedTab === "rent" && (
+              <>
+                <Grid item xs={12} sm={6} md={2}>
+                  <TextField
                   size="small"
-                  fullWidth
-                  sx={{ minWidth: '150px' }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={2}>
-                <Autocomplete
-                  options={['Apartment', 'Studio', 'Shared']}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Rental Type" variant="outlined" size="small" sx={{ minWidth: '150px' }} />
-                  )}
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={2}>
-                <Autocomplete
-                  options={locations}
-                  renderInput={(params) => (
-                    <TextField {...params} label="City" variant="outlined" size="small" sx={{ minWidth: '150px' }} />
-                  )}
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={2}>
-                <TextField
-                  label="Budget"
-                  variant="outlined"
+                    label="Enter Keyword..."
+                    variant="outlined"
+                    fullWidth
+                    sx={{ minWidth: "150px" }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Autocomplete
+                    options={["Apartment", "Studio", "Shared"]}
+                    size="small"
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Rental Type"
+                        variant="outlined"
+                        sx={{ minWidth: "150px" }}
+                      />
+                    )}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Autocomplete
+                    options={locations}
+                    size="small"
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="City"
+                        variant="outlined"
+                        sx={{ minWidth: "150px" }}
+                      />
+                    )}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <TextField
                   size="small"
-                  fullWidth
-                  sx={{ minWidth: '150px' }}
-                />
-              </Grid>
-            </>
-          )}
+                    label="Budget"
+                    variant="outlined"
+                    fullWidth
+                    sx={{ minWidth: "150px" }}
+                  />
+                </Grid>
+              </>
+            )}
 
-          <Grid item xs={12} sm="auto">
-            <Button sx={{ textTransform: "none",minWidth: '150px' }} endIcon={<MoreVertIcon />}>
-              Advanced
-            </Button>
+            <Grid item xs={12} sm="auto">
+              <Button
+                sx={{ textTransform: "none", minWidth: "150px", }}
+                endIcon={<MoreVertIcon />}
+              >
+                Advanced
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm="auto">
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#E0D8C3",
+                  "&:hover": {
+                    backgroundColor: "#4D4D4D",
+                    color: "#fff",
+                  },
+                  color: "#000",
+                  minWidth: "150px",
+                  // height: "55px",
+                }}
+              >
+                Search
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm="auto">
-            <Button variant="contained" sx={{ backgroundColor: '#c2b280', color: 'white', minWidth: '150px' }}>
-              Search
-            </Button>
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
     </Box>
   );

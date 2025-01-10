@@ -12,7 +12,8 @@ import React from "react";
 
 export default function WantCall() {
   return (
-    <Box  sx={{
+    <Box
+      sx={{
         backgroundImage: "url(/images/WantCallBG.svg)", // Path to your image
         backgroundSize: "cover", // Ensures the image covers the entire area
         backgroundRepeat: "no-repeat", // Prevents the image from repeating
@@ -24,7 +25,8 @@ export default function WantCall() {
         justifyContent: "center",
         alignItems: "center,",
         flexDirection: "column",
-      }}>
+      }}
+    >
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
@@ -90,12 +92,23 @@ export default function WantCall() {
                 py: { xs: 2, md: 15 },
                 px: 2,
                 gap: 3,
+                width: {md: "500px"}
               }}
             >
-              <Typography variant="h4" sx={{ textAlign: "start", fontWeight: 600 }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  textAlign: "start",
+                  fontWeight: "bold",
+                  fontSize: "40px",
+                }}
+              >
                 Want a call in 30s?
               </Typography>
-              <Typography variant="body1" sx={{ textAlign: "start" }}>
+              <Typography
+                variant="body1"
+                sx={{ textAlign: "start", fontSize: "16px" }}
+              >
                 Real people, Real answers. Real quick. Let one of our Client
                 Conciergeshelp you get started on your home search. Enter your
                 phone number and we’ll call you within 30 seconds.
@@ -103,17 +116,22 @@ export default function WantCall() {
               <TextField
                 variant="outlined"
                 fullWidth
-                placeholder="Enter Your Email Address"
+                placeholder="Enter Your Phone Number"
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
                       <Button
                         variant="contained"
-                        style={{
-                          backgroundColor: "#d9c79b",
-                          color: "#fff",
-                          height: "100%",
-                          textTransform: "none",
+                        sx={{
+                          backgroundColor: "#E0D8C3",
+                          "&:hover": {
+                            backgroundColor: "#4D4D4D",
+                            color: "#fff",
+                          },
+                          color: "#000",
+                          minWidth: "118px",
+                          height: "55px",
+                          mr: -1.8,
                         }}
                       >
                         Call Back

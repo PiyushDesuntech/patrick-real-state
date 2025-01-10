@@ -65,24 +65,33 @@ const NavbarIndex = () => {
 
   return (
     <>
-      {/* AppBar */}
-      <AppBar position="static" sx={{ background: "transparent" }}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Logo */}
+      <AppBar
+        position="static"
+        sx={{ background: "transparent", boxShadow: "none" }}
+      >
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            px: { md: 4 },
+            pt: 2,
+            zIndex: 1100,
+          }}
+        >
           <Image
             src="/images/logo.svg"
             alt="Colonial Realty Associates"
-            width={200}
-            height={100}
+            width={269}
+            height={66}
           />
 
           {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
             {navItems.slice(0, -1).map((item, index) => (
               <Button
                 key={index}
                 color="inherit"
-                sx={{ textTransform: "none" }}
+                sx={{ textTransform: "none", fontSize: "16px" }}
               >
                 {item}
               </Button>
@@ -104,11 +113,16 @@ const NavbarIndex = () => {
             sx={{
               display: { xs: "none", md: "flex" },
               backgroundColor: "#E0D8C3",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "#fff",
+              },
               color: "#000",
               borderRadius: "30px",
               textTransform: "none",
-              pr: {xs: 2, sm: 2, md: 2, lg: 4},
-              pl: {xs: 2, sm: 2, md: 2, lg: 4},
+              px: { xs: 2, sm: 2, md: 5, lg: "40px" },
+              py: "10px",
+              // mr: 3,
             }}
           >
             Become an Agent
@@ -158,12 +172,18 @@ const NavbarIndex = () => {
             variant="contained"
             color="secondary"
             sx={{
+              display: { xs: "none", md: "flex" },
               backgroundColor: "#E0D8C3",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "#fff",
+              },
               color: "#000",
               borderRadius: "30px",
               textTransform: "none",
-              pr: 4,
-              pl: 4,
+              px: { xs: 2, sm: 2, md: 5, lg: "40px" },
+              py: "10px",
+              // mr: 3,
             }}
           >
             Become an Agent

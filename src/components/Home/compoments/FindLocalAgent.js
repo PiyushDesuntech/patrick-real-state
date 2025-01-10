@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import { TextField, InputAdornment } from "@mui/material";
@@ -6,9 +6,9 @@ import SearchIcon from "@mui/icons-material/Search"; // Importing the search ico
 
 export default function FindLocalAgent() {
   return (
-    <Container>
-      <Grid container spacing={2}>
-        <Grid item sm={6} xs={12}>
+    <Container maxWidth="xl" >
+      <Grid container spacing={2} mt={6}>
+        <Grid item md={7} xs={12}>
           <Box
             style={{
               display: "flex",
@@ -22,7 +22,7 @@ export default function FindLocalAgent() {
               src="/images/LocalAgent.svg"
               alt="Colonial Realty Associates"
               layout="responsive"
-              width={650}
+              width={890}
               height={500}
               style={{ objectFit: "contain" }}
             />
@@ -30,9 +30,9 @@ export default function FindLocalAgent() {
         </Grid>
         <Grid
           item
-          sm={6}
+          md={5}
           xs={12}
-          sx={{ display: "flex", justifyContent: "center" }}
+          sx={{ display: "flex", justifyContent: "flex-start" }}
         >
           <Box
             sx={{
@@ -40,7 +40,8 @@ export default function FindLocalAgent() {
               justifyContent: "center",
               flexDirection: "column",
               m: 1,
-              gap: 1,
+              gap: 3,
+              maxWidth: "500px"
             }}
           >
             <Typography variant="h4" sx={{ textAlign: "start" }}>
@@ -50,7 +51,7 @@ export default function FindLocalAgent() {
               You’re in luck! HouzQuest rigerously vets the best Realtors in
               your local market to help you find just the right fit.
             </Typography>
-            <TextField
+            {/* <TextField
               variant="outlined"
               placeholder="Search..."
               fullWidth
@@ -66,7 +67,38 @@ export default function FindLocalAgent() {
                   borderRadius: 4, // Adds a slight border-radius to the input field
                 },
               }}
-            />
+            /> */}
+            <TextField
+                variant="outlined"
+                // fullWidth
+                 placeholder="Enter Your Zipcode"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Button
+                       variant="contained"
+                       sx={{
+                         backgroundColor: "#E0D8C3",
+                         "&:hover": {
+                           backgroundColor: "#4D4D4D",
+                           color: "#fff",
+                         },
+                         color: "#000",
+                         minWidth: "84px",
+                         height: "55px",
+                         mr: -1.8
+                       }}
+                      >
+                        <SearchIcon />
+                      </Button>
+                    </InputAdornment>
+                  ),
+                  style: {
+                    backgroundColor: "#fff",
+                    borderRadius: "4px",
+                  },
+                }}
+              />
           </Box>
         </Grid>
       </Grid>

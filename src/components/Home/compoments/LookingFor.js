@@ -8,6 +8,7 @@ export default function LookingFor() {
         position: "relative",
         overflow: "hidden",
         mb: 3,
+        mt: 6,
       }}
     >
       {/* Background Image Container */}
@@ -22,7 +23,7 @@ export default function LookingFor() {
             sm: "40%", // 40% of the box height on medium screens
             md: "70%", // 50% of the box height on larger screens
           },
-          backgroundImage: 'url(/images/LookingFor.svg)',
+          backgroundImage: "url(/images/LookingFor.svg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 1,
@@ -31,6 +32,7 @@ export default function LookingFor() {
 
       {/* Content Overlay */}
       <Container
+      maxWidth="xl"
         sx={{
           position: "relative",
           zIndex: 2, // Bring content above the background
@@ -64,7 +66,7 @@ export default function LookingFor() {
             fontSize: {
               xs: "0.9rem", // Smaller font for small screens
               sm: "1rem", // Medium font for medium screens
-              md: "1.2rem", // Standard font for larger screens
+              md: "16px", // Standard font for larger screens
             },
           }}
         >
@@ -82,10 +84,12 @@ export default function LookingFor() {
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)", // Box shadow
             borderRadius: 2,
             border: "5px solid #fff",
+            mx: {md: 6},
+            mb: 2
           }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387196.07669747627!2d-74.30915211195304!3d40.69667268889187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1736422121569!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6049.312110584377!2d-73.92965166949828!3d40.703572024094804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25eab37fd60ef%3A0x1ff34649b0a304c9!2sHouse%20of%20Yes!5e0!3m2!1sen!2sin!4v1736509838444!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{

@@ -157,32 +157,33 @@ const FooterIndex = () => {
       <Container>
       <Box
           sx={{
-            pt: 3,
+            pt: 5,
             // textAlign: "center",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-between",
             color: "white",
-            py: 2,
+            // py: 3,
+            pb: 2
           }}
         >
           <Box sx={{display: "flex", gap: {xs: 1, md : 3}, flexWrap: "wrap," }}>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, fontSize: "16px" }}>
               Home
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, fontSize: "16px" }}>
               Listing
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, fontSize: "16px" }}>
               Property
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, fontSize: "16px" }}>
               Pages
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, fontSize: "16px" }}>
               Blog
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, fontSize: "16px" }}>
               Contact
             </Typography>
           </Box>

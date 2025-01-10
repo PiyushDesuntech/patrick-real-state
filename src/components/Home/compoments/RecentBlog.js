@@ -14,7 +14,7 @@ export default function RecentBlog() {
         width: "100%",
       }}
     >
-      <Container>
+      <Container maxWidth="xl" sx={{px: {md: 8}, pb: 5}}>
         <Grid container>
           <Grid item md={7} xs={12} sx={{ color: "#fff" }}>
             <Box
@@ -22,10 +22,10 @@ export default function RecentBlog() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                py: { xs: 2, md: 6 },
+                py: { xs: 2, md: 3 },
               }}
             >
-              <Typography variant="h4">Recent Blog </Typography>
+              <Typography variant="h4" sx={{fontSize: "25px"}}>Recent Blog </Typography>
               <Box
                 sx={{
                   display: "flex",
@@ -61,7 +61,7 @@ export default function RecentBlog() {
                     justifyContent: "center",
                   }}
                 >
-                  <Typography>
+                  <Typography sx={{fontSize: "23px"}}>
                     My Two Cents: How Tax Changes will Affect - Home Buying in
                     2019
                   </Typography>
@@ -72,10 +72,10 @@ export default function RecentBlog() {
                       mt: 2,
                     }}
                   >
-                    <Typography>05/17/2019</Typography>
+                    <Typography sx={{fontSize: "16px"}}>05/17/2019</Typography>
                     <Button
                       endIcon={<EastIcon sx={{ color: "#fff" }} />}
-                      sx={{ color: "#fff", textTransform: "none" }}
+                      sx={{ color: "#fff", textTransform: "none", fontSize: "16px" }}
                     >
                       Read More
                     </Button>
@@ -89,9 +89,9 @@ export default function RecentBlog() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                // justifyContent: "center",
                 // alignItems: "center",
-                py: { xs: 2, md: 10 },
+                py: { xs: 2, md: 3 },
                 px: 2,
                 color: "#fff",
                 gap: 3,
@@ -112,11 +112,16 @@ export default function RecentBlog() {
                     <InputAdornment position="end">
                       <Button
                         variant="contained"
-                        style={{
-                          backgroundColor: "#d9c79b",
-                          color: "#fff",
-                          height: "100%",
-                          textTransform: "none",
+                        sx={{
+                          backgroundColor: "#E0D8C3",
+                          "&:hover": {
+                            backgroundColor: "#4D4D4D",
+                            color: "#fff",
+                          },
+                          color: "#000",
+                          minWidth: "150px",
+                          height: "55px",
+                          mr: -1.8
                         }}
                       >
                         Subscribe
