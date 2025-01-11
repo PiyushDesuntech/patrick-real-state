@@ -34,8 +34,7 @@ const NavbarIndex = () => {
   const [isLoginView, setIsLoginView] = useState(true);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Check if the screen size is small or below
-
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); 
   const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -85,8 +84,8 @@ const NavbarIndex = () => {
             height={66}
           />
 
-          {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
+          
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: {md: 0, lg: 4} }}>
             {navItems.slice(0, -1).map((item, index) => (
               <Button
                 key={index}
@@ -102,11 +101,10 @@ const NavbarIndex = () => {
               sx={{ textTransform: "none" }}
             >
               <AccountCircleIcon sx={{ mr: 1 }} />
-              Login/Register
+              Login/ Register
             </Button>
           </Box>
 
-          {/* Become an Agent Button */}
           <Button
             variant="contained"
             color="secondary"
@@ -120,9 +118,11 @@ const NavbarIndex = () => {
               color: "#000",
               borderRadius: "30px",
               textTransform: "none",
-              px: { xs: 2, sm: 2, md: 5, lg: "40px" },
+              px: { xs: 2, sm: 2, md: 2, lg: "40px" },
               py: "10px",
               // mr: 3,
+              width: "fit-content",
+              whiteSpace: "nowrap"
             }}
           >
             Become an Agent
@@ -207,7 +207,7 @@ const NavbarIndex = () => {
           </Box>
           <Box
             display="flex"
-            flexDirection={isMobile ? "column" : "row"} // Stack content on mobile
+            flexDirection={isMobile ? "column" : "row"} 
           >
             <Box
               style={{

@@ -1,5 +1,5 @@
 "use client"
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import Box from "@mui/material/Box";
 import "./globals.css";
 import Script from "next/script";
@@ -8,7 +8,10 @@ import { useEffect, useState } from "react";
 import FooterIndex from "@/components/Footer/FooterIndex";
 
 // Load Inter font
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"], // Specify available weights
+});
 
 // export const metadata = {
 //   title: "Merit Pathshala",
@@ -24,7 +27,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         {isMounted && <NavbarIndex />}
         <Box suppressHydrationWarning>{children}</Box>
         {isMounted && <FooterIndex/>}

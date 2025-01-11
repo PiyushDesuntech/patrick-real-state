@@ -11,19 +11,19 @@ import {
 
 const data = [
   {
-    icon: "/images/Trusted.svg", // Path to the image in the public folder
+    icon: "/images/financing.svg",
     title: "Trusted By Thousands",
     description:
       "Curabitur viverra, risus non laoreet molestie, erat justo porta urna, quis consequat ante augue commodo eros. Fusce convallis sodales lacus.",
   },
   {
-    icon: "/images/wideRange.svg",
+    icon: "/images/Trusted.svg", 
     title: "Wide Range Of Properties",
     description:
       "Morbi nec scelerisque metus, vel iaculis dolor. Vivamus consequat felis quam, nec fringilla leo finibus in. Duis pulvinar nisi nec ultricies aliquet.",
   },
   {
-    icon: "/images/financing.svg",
+    icon: "/images/wideRange.svg",
     title: "Financing Made Easy",
     description:
       "Praesent eleifend nunc in luctus ultrices. Pellentesque sed mauris sed felis consectetur mollis non nec tortor. In sit amet semper nibh.",
@@ -49,25 +49,28 @@ const ResponsiveCards = () => {
                   boxShadow: 3,
                   padding: "1rem",
                   borderRadius: "8px",
+                  transition: "background-color 0.5s ease, color 0.5s ease",
                   "&:hover": {
-                    backgroundColor: "#737373",
+                    backgroundColor: "#343433",
                     color: "#fff",
                   },
-                  height: {md: "350px"},
+                 
                 }}
               >
                 <CardContent
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
+                    justifyContent: "space-around",
                     alignItems: "center",
+                    // gap: "36px",
+                    height: {md: "360px"},
                   }}
                 >
                   <Box
                     sx={{
-                      width: "120px",
-                      height: "120px",
+                      width: "160px",
+                      height: "160px",
                       borderRadius: "50%",
                       background: "#E8E1C4",
                       display: "flex",
@@ -85,12 +88,16 @@ const ResponsiveCards = () => {
                       height={74}
                     />
                   </Box>
-                  <Typography variant="h6" gutterBottom>
+                 <Box>
+                 <Typography variant="h6" gutterBottom>
                     {item.title}
                   </Typography>
+                 </Box>
+                  <Box>
                   <Typography variant="body2" >
                     {item.description}
                   </Typography>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>

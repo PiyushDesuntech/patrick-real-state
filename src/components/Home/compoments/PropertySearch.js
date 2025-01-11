@@ -143,7 +143,7 @@ const PropertySearch = () => {
             display: "flex",
             alignItems: "center",
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-            width: "100%",
+            width: "fit-content",
             display: "flex",
             justifyContent: "center",
           }}
@@ -151,7 +151,7 @@ const PropertySearch = () => {
           <Grid container spacing={2} alignItems="center">
             {selectedTab === "buy" && (
               <>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <TextField
                   size="small"
                     label="Enter Keyword..."
@@ -160,7 +160,7 @@ const PropertySearch = () => {
                     sx={{ minWidth: "150px" }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <Autocomplete
                     options={propertyTypes}
                     size="small"
@@ -175,7 +175,7 @@ const PropertySearch = () => {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <Autocomplete
                     options={locations}
                     size="small"
@@ -190,7 +190,7 @@ const PropertySearch = () => {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <Autocomplete
                     options={priceRange}
                     size="small"
@@ -209,7 +209,7 @@ const PropertySearch = () => {
             )}
             {selectedTab === "rent" && (
               <>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <TextField
                   size="small"
                     label="Enter Keyword..."
@@ -218,7 +218,7 @@ const PropertySearch = () => {
                     sx={{ minWidth: "150px" }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <Autocomplete
                     options={["Apartment", "Studio", "Shared"]}
                     size="small"
@@ -233,7 +233,7 @@ const PropertySearch = () => {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <Autocomplete
                     options={locations}
                     size="small"
@@ -248,7 +248,7 @@ const PropertySearch = () => {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={2}>
+                <Grid item xs={12} sm={6} md={3} lg={2}>
                   <TextField
                   size="small"
                     label="Budget"

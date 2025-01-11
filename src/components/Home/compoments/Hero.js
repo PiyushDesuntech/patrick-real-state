@@ -1,5 +1,5 @@
 "use client"
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Container } from "@mui/material";
 import React, { useState } from "react";
 import PropertySearch from "./PropertySearch";
 
@@ -57,6 +57,7 @@ export default function Hero() {
         />
       </Box>
 
+      <Container maxWidth="xl" sx={{px: {md: 6}}}>
       <Box
         sx={{
           display: "flex",
@@ -69,7 +70,8 @@ export default function Hero() {
           pt: {xs: 15, sm: 30},
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: {xs:"10px", lg: "100px"},}}>
+          <Box>
           <Typography
             variant="h2"
             sx={{
@@ -97,6 +99,7 @@ export default function Hero() {
           >
             from as low as $10 per day with limited time offer
           </Typography>
+          </Box>
           <PropertySearch />
         </Box>
       </Box>
@@ -134,6 +137,7 @@ export default function Hero() {
           </Button>
         ))}
       </Box>
+      </Container>
     </Box>
   );
 }

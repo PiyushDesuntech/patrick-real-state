@@ -27,7 +27,7 @@ export default function WantCall() {
         flexDirection: "column",
       }}
     >
-      <Container>
+      <Container maxWidth="xl" sx={{px: {lg: "94px"}, py: 4}}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={2}>
