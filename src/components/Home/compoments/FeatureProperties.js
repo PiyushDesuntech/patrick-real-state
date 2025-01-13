@@ -50,7 +50,7 @@ const data = [
     feature: "Feature",
   },
   {
-    images: ["/images/Feature3.svg", "/images/Feature2.svg"],
+    images: ["/images/Feature1.svg", "/images/Feature2.svg"],
     title: "Arlo Apartment",
     price: "$2150/mo",
     beds: 4,
@@ -213,8 +213,8 @@ const FeatureProperties = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  "&:hover .image-container": {
-                    transform: "scale(1.1)",
+                  "&:hover  .slick-active  .image-container": {
+                    transform: "scale(1.2)",
                   },
                 }}
               >

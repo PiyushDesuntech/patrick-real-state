@@ -840,7 +840,7 @@ const data = [
     },
     {
         images: [
-            "/images/Feature3.svg",
+            "/images/Feature1.svg",
             "/images/Feature2.svg"
         ],
         title: "Arlo Apartment",
@@ -1089,8 +1089,8 @@ const FeatureProperties = ()=>{
                                     display: "flex",
                                     flexDirection: "column",
                                     justifyContent: "space-between",
-                                    "&:hover .image-container": {
-                                        transform: "scale(1.1)"
+                                    "&:hover  .slick-active  .image-container": {
+                                        transform: "scale(1.2)"
                                     }
                                 },
                                 children: [
