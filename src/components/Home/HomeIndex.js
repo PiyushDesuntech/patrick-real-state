@@ -10,20 +10,26 @@ import WhyUs from './compoments/WhyUs'
 import ClientStories from './compoments/ClientStories'
 import RecentBlog from './compoments/RecentBlog'
 import WantCall from './compoments/WantCall'
+import PopularBoston from './compoments/PopularBoston'
+import ContactUs from './compoments/ContactUs'
+import ClientTestimonials from './compoments/ClientTestimonials'
 
 export default function HomeIndex() {
   return (
     <Box>
      <Hero/>
-     <FirstTime/>
+     {/* <FirstTime/> */}
      <FeatureProperties/>
-     <FindLocalAgent/>
+     <PopularBoston/>
+     <ContactUs/>
+     {/* <FindLocalAgent/> */}
      <LookingFor/>
-     <JoinUs/>
      <WhyUs/>
-     <ClientStories/>
+     <ClientTestimonials/>
+     {/* <ClientStories/> */}
      <RecentBlog/>
      <WantCall/>
+     <JoinUs/>
     </Box>
   )
 }

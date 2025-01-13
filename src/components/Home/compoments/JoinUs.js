@@ -10,7 +10,7 @@ export default function JoinUs() {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container sx={{px: {md: 7}, py: 4}}>
+        <Grid container sx={{ px: { md: 7 }, py: 4 }}>
           <Grid item sm={7} xs={12} sx={{ color: "#fff" }}>
             <Box
               sx={{
@@ -18,27 +18,36 @@ export default function JoinUs() {
                 flexDirection: "column",
                 justifyContent: "center",
                 py: 10,
-                gap: 2
+                gap: 2,
               }}
             >
-              <Typography variant="h4" sx={{fontSize: "40px"}}>
-                Join With Us & Have your Dream Home
+              <Typography variant="h4" sx={{ fontSize: "40px" }}>
+                Interested in a career in real estate{" "}
               </Typography>
-              <Typography variant="body2" sx={{fontSize: "16px"}}>
+              <Typography variant="body2" sx={{ fontSize: "16px" }}>
                 Maecenas pharetra neque maximus nunc semper, in faucibus quam
                 facilisis.
               </Typography>
             </Box>
           </Grid>
-          <Grid item sm={5} xs={12} sx={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+          <Grid
+            item
+            sm={5}
+            xs={12}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
             <Box
               sx={{
                 display: "flex",
                 gap: 3,
-                justifyContent: {xs: "center", md: "flex-end"},
+                justifyContent: { xs: "center", md: "flex-end" },
                 alignItems: "center",
                 py: 9,
-                flexWrap: "wrap"
+                flexWrap: "wrap",
               }}
             >
               <Button
@@ -53,24 +62,23 @@ export default function JoinUs() {
                   minWidth: "233px",
                   height: "53px",
                   textTransform: "none",
-                 
                 }}
               >
                 Contact With Us
               </Button>
               <Button
-                 variant="contained"
-                 sx={{
+                variant="contained"
+                sx={{
                   textTransform: "none",
-                   backgroundColor: "#fff",
-                   "&:hover": {
-                     backgroundColor: "#4D4D4D",
-                     color: "#fff",
-                   },
-                   color: "#000",
-                   minWidth: "233px",
-                   height: "53px",
-                 }}
+                  backgroundColor: "#fff",
+                  "&:hover": {
+                    backgroundColor: "#4D4D4D",
+                    color: "#fff",
+                  },
+                  color: "#000",
+                  minWidth: "233px",
+                  height: "53px",
+                }}
               >
                 Know More
               </Button>

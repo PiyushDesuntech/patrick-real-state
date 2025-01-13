@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Lato } from "next/font/google";
 import Box from "@mui/material/Box";
 import "./globals.css";
@@ -6,6 +6,8 @@ import Script from "next/script";
 import NavbarIndex from "@/components/Navbar/NavbarIndex";
 import { useEffect, useState } from "react";
 import FooterIndex from "@/components/Footer/FooterIndex";
+import PropertyNavbar from "@/components/PropertyNavbar/PropertyNavbar";
+import { usePathname } from "next/navigation";
 
 // Load Inter font
 const lato = Lato({
@@ -20,6 +22,7 @@ const lato = Lato({
 
 export default function RootLayout({ children }) {
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname(); // Get the current route path
 
   useEffect(() => {
     setIsMounted(true);
@@ -28,9 +31,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={lato.className}>
-        {isMounted && <NavbarIndex />}
+        {isMounted && pathname !== "/property-list" && <NavbarIndex />}
+        {isMounted && pathname === "/property-list" && <PropertyNavbar />}
         <Box suppressHydrationWarning>{children}</Box>
-        {isMounted && <FooterIndex/>}
+        {isMounted && <FooterIndex />}
       </body>
     </html>
   );

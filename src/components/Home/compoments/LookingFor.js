@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import React from "react";
 
 export default function LookingFor() {
@@ -32,7 +32,7 @@ export default function LookingFor() {
 
       {/* Content Overlay */}
       <Container
-      maxWidth="xl"
+        maxWidth="xl"
         sx={{
           position: "relative",
           zIndex: 2, // Bring content above the background
@@ -42,6 +42,7 @@ export default function LookingFor() {
             md: "5%", // Standard space for larger screens
           },
           color: "#fff",
+          mt: {xs: -7,sm: 0-4, md: 0}
         }}
       >
         <Typography
@@ -52,11 +53,11 @@ export default function LookingFor() {
             fontSize: {
               xs: "1.5rem", // Smaller font for small screens
               sm: "2rem", // Medium font for medium screens
-              md: "2.5rem", // Standard font for larger screens
+              md: "40px", // Standard font for larger screens
             },
           }}
         >
-          What are you Looking For?
+          Available Properties Near You{" "}
         </Typography>
         <Typography
           variant="body2"
@@ -72,6 +73,40 @@ export default function LookingFor() {
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </Typography>
+        <Box sx={{display: "flex", justifyContent: "center", gap: "21px", mb: "41px"}}>
+          <Button
+            variant="contained"
+            sx={{
+              textTransform: "none",
+              backgroundColor: "#fff",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "#fff",
+              },
+              color: "#000",
+              minWidth: "122px",
+              height: "48px",
+            }}
+          >
+            Rent
+          </Button>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#E0D8C3",
+              "&:hover": {
+                backgroundColor: "#4D4D4D",
+                color: "#fff",
+              },
+              color: "#000",
+              minWidth: "122px",
+              height: "48px",
+              textTransform: "none",
+            }}
+          >
+            Buy
+          </Button>
+        </Box>
         <Box
           sx={{
             position: "relative",
@@ -84,8 +119,8 @@ export default function LookingFor() {
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)", // Box shadow
             borderRadius: 2,
             border: "5px solid #fff",
-            mx: {md: 6},
-            mb: 2
+            mx: { md: 6 },
+            mb: 2,
           }}
         >
           <iframe

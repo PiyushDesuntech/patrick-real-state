@@ -22,7 +22,7 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -34,7 +34,7 @@ const NavbarIndex = () => {
   const [isLoginView, setIsLoginView] = useState(true);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); 
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -54,12 +54,14 @@ const NavbarIndex = () => {
   };
 
   const navItems = [
-    "Home",
-    "About Us",
+    "Rent",
+    "Buy",
+    "Sell",
+    "Students",
     "Market Insight",
-    "Relocation Services",
-    "Student Resources",
-    "Login/Register",
+    "Resources",
+    "About",
+    "Landlords",
   ];
 
   return (
@@ -84,8 +86,9 @@ const NavbarIndex = () => {
             height={66}
           />
 
-          
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: {md: 0, lg: 4} }}>
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, gap: { md: 0, lg: 4 } }}
+          >
             {navItems.slice(0, -1).map((item, index) => (
               <Button
                 key={index}
@@ -95,18 +98,15 @@ const NavbarIndex = () => {
                 {item}
               </Button>
             ))}
-            <Button
-              color="inherit"
-              onClick={handleDialogToggle}
-              sx={{ textTransform: "none" }}
-            >
-              <AccountCircleIcon sx={{ mr: 1 }} />
-              Login/ Register
+            <Button color="inherit" sx={{ textTransform: "none" }}>
+              <PersonOutlineOutlinedIcon sx={{ mr: 1 }} />
+              Landlords
             </Button>
           </Box>
 
           <Button
             variant="contained"
+            onClick={handleDialogToggle}
             color="secondary"
             sx={{
               display: { xs: "none", md: "flex" },
@@ -122,10 +122,10 @@ const NavbarIndex = () => {
               py: "10px",
               // mr: 3,
               width: "fit-content",
-              whiteSpace: "nowrap"
+              whiteSpace: "nowrap",
             }}
           >
-            Become an Agent
+            Login/Register
           </Button>
 
           {/* Mobile Menu Icon */}
@@ -150,26 +150,16 @@ const NavbarIndex = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            {navItems.slice(0, -1).map((text, index) => (
+            {navItems.map((text, index) => (
               <ListItem key={index}>
-              <ListItemText primary={text} />
-            </ListItem>
-            
+                <ListItemText primary={text} />
+              </ListItem>
             ))}
-            {/* Login/Register Button */}
-            <ListItem
-              onClick={(e) => {
-                e.stopPropagation(); 
-                handleDialogToggle(); 
-                setDrawerOpen(false); 
-              }}
-            >
-              <ListItemText primary="Login/Register" />
-            </ListItem>
           </List>
           <Button
             variant="contained"
             color="secondary"
+            onClick={handleDialogToggle}
             sx={{
               display: "flex",
               backgroundColor: "#E0D8C3",
@@ -185,7 +175,7 @@ const NavbarIndex = () => {
               m: 2,
             }}
           >
-            Become an Agent
+             Login/Register
           </Button>
         </Box>
       </Drawer>
@@ -196,7 +186,7 @@ const NavbarIndex = () => {
         onClose={handleDialogToggle}
         maxWidth="md"
         fullWidth
-        fullScreen={isMobile} 
+        fullScreen={isMobile}
       >
         <DialogContent>
           <Box display="flex" justifyContent="flex-end">
@@ -204,10 +194,7 @@ const NavbarIndex = () => {
               <CloseIcon />
             </IconButton>
           </Box>
-          <Box
-            display="flex"
-            flexDirection={isMobile ? "column" : "row"} 
-          >
+          <Box display="flex" flexDirection={isMobile ? "column" : "row"}>
             <Box
               style={{
                 display: isMobile ? "none" : "flex",

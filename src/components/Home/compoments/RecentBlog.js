@@ -12,6 +12,7 @@ export default function RecentBlog() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
+        mt: 8
       }}
     >
       <Container maxWidth="xl" sx={{px: {md: 8}, pb: 5}}>
