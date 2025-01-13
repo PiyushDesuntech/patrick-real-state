@@ -167,7 +167,7 @@ function FirstTime() {
                                         variant: "outlined",
                                         sx: {
                                             textTransform: "none",
-                                            backgroundColor: "#E8E1C4",
+                                            backgroundColor: "#fff",
                                             color: "#000",
                                             "&:hover": {
                                                 backgroundColor: "#4D4D4D",
@@ -378,11 +378,13 @@ function FindLocalAgent() {
                                                 color: "#000",
                                                 minWidth: "84px",
                                                 height: "55px",
-                                                mr: -1.8
+                                                mr: -1.8,
+                                                borderRadius: "0px 4px 4px 0px",
+                                                boxShadow: "none"
                                             },
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$Search$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                 fileName: "[project]/src/components/Home/compoments/FindLocalAgent.js",
-                                                lineNumber: 92,
+                                                lineNumber: 94,
                                                 columnNumber: 25
                                             }, void 0)
                                         }, void 0, false, {
@@ -672,7 +674,10 @@ function JoinUs() {
                             sx: {
                                 display: "flex",
                                 gap: 3,
-                                justifyContent: "flex-end",
+                                justifyContent: {
+                                    xs: "center",
+                                    md: "flex-end"
+                                },
                                 alignItems: "center",
                                 py: 9,
                                 flexWrap: "wrap"
@@ -701,7 +706,7 @@ function JoinUs() {
                                     variant: "contained",
                                     sx: {
                                         textTransform: "none",
-                                        backgroundColor: "#E0D8C3",
+                                        backgroundColor: "#fff",
                                         "&:hover": {
                                             backgroundColor: "#4D4D4D",
                                             color: "#fff"
@@ -1231,7 +1236,8 @@ function RecentBlog() {
                                                     color: "#000",
                                                     minWidth: "150px",
                                                     height: "55px",
-                                                    mr: -1.8
+                                                    mr: -1.7,
+                                                    borderRadius: "0px 4px 4px 0px"
                                                 },
                                                 children: "Subscribe"
                                             }, void 0, false, {
@@ -1504,7 +1510,9 @@ function WantCall() {
                                                     color: "#000",
                                                     minWidth: "118px",
                                                     height: "55px",
-                                                    mr: -1.8
+                                                    mr: -1.7,
+                                                    borderRadius: "0px 4px 4px 0px",
+                                                    boxShadow: "none"
                                                 },
                                                 children: "Call Back"
                                             }, void 0, false, {

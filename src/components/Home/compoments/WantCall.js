@@ -131,7 +131,9 @@ export default function WantCall() {
                           color: "#000",
                           minWidth: "118px",
                           height: "55px",
-                          mr: -1.8,
+                          mr: -1.7,
+                          borderRadius: "0px 4px 4px 0px",
+                          boxShadow: "none"
                         }}
                       >
                         Call Back

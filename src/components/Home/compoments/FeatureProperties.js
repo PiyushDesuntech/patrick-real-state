@@ -14,7 +14,7 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -67,7 +67,7 @@ const PrevArrow = ({ onClick }) => (
     sx={{
       position: "absolute",
       left: { xs: "-15px", sm: "-15px", lg: "-50px" },
-      top: "50%",
+      top: "53%",
       transform: "translateY(-50%)",
       zIndex: 10,
       backgroundColor: "#fff",
@@ -75,8 +75,8 @@ const PrevArrow = ({ onClick }) => (
       border: "2px solid #D9D9D9",
       "&:hover": {
         backgroundColor: "#f0f0f0",
-        border: "2px solid #000000",
-        color: "#000000",
+        border: "2px solid #BAAE78",
+        color: "#BAAE78",
       },
     }}
   >
@@ -89,7 +89,7 @@ const PrevArrow1 = ({ onClick }) => (
     sx={{
       position: "absolute",
       left: 1,
-      top: "47%",
+      top: "50%",
       transform: "translateY(-50%)",
       zIndex: 10,
       backgroundColor: "#fff",
@@ -102,7 +102,7 @@ const PrevArrow1 = ({ onClick }) => (
       },
     }}
   >
-    <ArrowRightAltIcon sx={{ transform: 'rotate(180deg)' }} />
+    <ArrowRightAltIcon sx={{ transform: "rotate(180deg)" }} />
   </IconButton>
 );
 
@@ -112,7 +112,7 @@ const NextArrow = ({ onClick }) => (
     sx={{
       position: "absolute",
       right: { xs: "-15px", sm: "-15px", lg: "-50px" },
-      top: "50%",
+      top: "53%",
       transform: "translateY(-50%)",
       zIndex: 10,
       backgroundColor: "#fff",
@@ -120,8 +120,8 @@ const NextArrow = ({ onClick }) => (
       border: "2px solid #D9D9D9",
       "&:hover": {
         backgroundColor: "#f0f0f0",
-        border: "2px solid #000000",
-        color: "#000000",
+        border: "2px solid #BAAE78",
+        color: "#BAAE78",
       },
     }}
   >
@@ -134,7 +134,7 @@ const NextArrow1 = ({ onClick }) => (
     sx={{
       position: "absolute",
       right: 1,
-      top: "47%",
+      top: "50%",
       transform: "translateY(-50%)",
       zIndex: 10,
       backgroundColor: "rgba(252, 250, 250, 0.43)",
@@ -208,24 +208,29 @@ const FeatureProperties = () => {
                   borderRadius: 2,
                   overflow: "hidden",
                   boxShadow: 3,
-                  height: { xs: "280px", md: "340px", lg: "387px" },
+                  height: { xs: "280px", md: "340px", lg: "385px" },
                   width: { xs: "100%", lg: "339px" },
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  "&:hover .image-container": {
+                    transform: "scale(1.1)",
+                  },
                 }}
               >
-                <Box sx={{ position: "relative" }}>
+                <Box sx={{ position: "relative", overflow: "hidden" }}>
                   <Slider {...cardSliderSettings}>
                     {item.images.map((img, imgIndex) => (
                       <Box
                         key={imgIndex}
+                        className="image-container" 
                         sx={{
                           height: { xs: "280px", md: "340px", lg: "387px" },
                           width: { xs: "100%", lg: "339px" },
                           backgroundImage: `url(${img})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
+                          transition: "transform 0.3s ease-in-out",
                         }}
                       />
                     ))}
@@ -238,7 +243,7 @@ const FeatureProperties = () => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                     width: "100%",
-                    height:{xs: "80%", md:  "95%"},
+                    height: { xs: "80%", md: "95%" },
                   }}
                 >
                   <Box sx={{ display: "flex", gap: 1, m: 2 }}>

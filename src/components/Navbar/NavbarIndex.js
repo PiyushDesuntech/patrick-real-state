@@ -151,28 +151,27 @@ const NavbarIndex = () => {
         >
           <List>
             {navItems.slice(0, -1).map((text, index) => (
-              <ListItem button key={index}>
-                <ListItemText primary={text} />
-              </ListItem>
+              <ListItem key={index}>
+              <ListItemText primary={text} />
+            </ListItem>
+            
             ))}
             {/* Login/Register Button */}
             <ListItem
-              button
               onClick={(e) => {
-                e.stopPropagation(); // Prevent Drawer onClose from triggering
-                handleDialogToggle(); // Open the dialog
-                setDrawerOpen(false); // Close the drawer
+                e.stopPropagation(); 
+                handleDialogToggle(); 
+                setDrawerOpen(false); 
               }}
             >
               <ListItemText primary="Login/Register" />
             </ListItem>
           </List>
-          <Divider />
           <Button
             variant="contained"
             color="secondary"
             sx={{
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               backgroundColor: "#E0D8C3",
               "&:hover": {
                 backgroundColor: "#4D4D4D",
@@ -183,7 +182,7 @@ const NavbarIndex = () => {
               textTransform: "none",
               px: { xs: 2, sm: 2, md: 5, lg: "40px" },
               py: "10px",
-              // mr: 3,
+              m: 2,
             }}
           >
             Become an Agent
@@ -197,7 +196,7 @@ const NavbarIndex = () => {
         onClose={handleDialogToggle}
         maxWidth="md"
         fullWidth
-        fullScreen={isMobile} // Make the dialog fullscreen on mobile
+        fullScreen={isMobile} 
       >
         <DialogContent>
           <Box display="flex" justifyContent="flex-end">

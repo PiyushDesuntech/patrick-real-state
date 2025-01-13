@@ -121,7 +121,8 @@ export default function RecentBlog() {
                           color: "#000",
                           minWidth: "150px",
                           height: "55px",
-                          mr: -1.8
+                          mr: -1.7,
+                          borderRadius: "0px 4px 4px 0px",
                         }}
                       >
                         Subscribe

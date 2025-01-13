@@ -86,7 +86,9 @@ export default function FindLocalAgent() {
                          color: "#000",
                          minWidth: "84px",
                          height: "55px",
-                         mr: -1.8
+                         mr: -1.8,
+                         borderRadius: "0px 4px 4px 0px",
+                         boxShadow: "none"
                        }}
                       >
                         <SearchIcon />

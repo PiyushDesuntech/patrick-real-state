@@ -53,7 +53,7 @@ export default function FirstTime() {
                 variant="outlined"
                 sx={{
                   textTransform: "none",
-                  backgroundColor:  "#E8E1C4",
+                  backgroundColor:  "#fff",
                   color: "#000",
                   "&:hover": {
                     backgroundColor: "#4D4D4D",

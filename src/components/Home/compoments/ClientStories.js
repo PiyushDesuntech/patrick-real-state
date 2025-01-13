@@ -11,8 +11,7 @@ import {
   useTheme,
 } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import WestIcon from '@mui/icons-material/West';
-import EastIcon from '@mui/icons-material/East';
+import StraightIcon from '@mui/icons-material/Straight';
 
 const ClientStories = () => {
   const theme = useTheme();
@@ -135,25 +134,31 @@ const ClientStories = () => {
               <IconButton
                 onClick={handlePrev}
                 sx={{
-                  backgroundColor: "#eaeaea",
-                  "&:hover": { backgroundColor: "#cccccc" },
+                  backgroundColor: "transparent",
+                  colo: "#747578",
+                  marginLeft: "1rem",
+                  "&:hover": { backgroundColor: "#4D4D4D", color: "#fff" },
                   borderRadius: 1,
-                  px: 2,
+                  px: 3,
+                  border: "2px solid #4D4D4D",
+                  height: "50px"
                 }}
               >
-                <WestIcon />
+                <StraightIcon sx={{transform: "rotate(-90deg) scaleY(2)"}}/>
               </IconButton>
               <IconButton
                 onClick={handleNext}
                 sx={{
-                  backgroundColor: "#eaeaea",
+                  backgroundColor: "transparent",
+                  colo: "#747578",
                   marginLeft: "1rem",
-                  "&:hover": { backgroundColor: "#cccccc" },
+                  "&:hover": { backgroundColor: "#4D4D4D", color: "#fff" },
                   borderRadius: 1,
-                  px: 2,
+                  px: 3,
+                  border: "2px solid #4D4D4D"
                 }}
               >
-                <EastIcon />
+                <StraightIcon sx={{transform: "rotate(90deg) scaleY(2)"}}/>
               </IconButton>
             </Box>
             </Box>

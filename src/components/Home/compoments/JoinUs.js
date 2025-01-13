@@ -35,7 +35,7 @@ export default function JoinUs() {
               sx={{
                 display: "flex",
                 gap: 3,
-                justifyContent: "flex-end",
+                justifyContent: {xs: "center", md: "flex-end"},
                 alignItems: "center",
                 py: 9,
                 flexWrap: "wrap"
@@ -62,7 +62,7 @@ export default function JoinUs() {
                  variant="contained"
                  sx={{
                   textTransform: "none",
-                   backgroundColor: "#E0D8C3",
+                   backgroundColor: "#fff",
                    "&:hover": {
                      backgroundColor: "#4D4D4D",
                      color: "#fff",
