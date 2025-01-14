@@ -66,10 +66,7 @@ const PropertyNavbar = () => {
 
   return (
     <>
-      <AppBar
-        position="static"
-        sx={{ background: "#fff",color: "#000" }}
-      >
+      <AppBar position="static" sx={{ background: "#fff", color: "#000" }}>
         <Toolbar
           sx={{
             display: "flex",
@@ -85,59 +82,63 @@ const PropertyNavbar = () => {
             width={269}
             height={66}
           />
-
-          <Box
-            sx={{ display: { xs: "none", md: "flex" }, gap: { md: 0, lg: 4 } }}
-          >
-            {navItems.slice(0, -1).map((item, index) => (
-              <Button
-                key={index}
-                color="inherit"
-                sx={{ textTransform: "none", fontSize: "16px" }}
-              >
-                {item}
+          <Box sx={{display: "flex"}}>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: { md: 0, lg: 0 },
+              }}
+            >
+              {navItems.slice(0, -1).map((item, index) => (
+                <Button
+                  key={index}
+                  color="inherit"
+                  sx={{ textTransform: "none", fontSize: "16px" }}
+                >
+                  {item}
+                </Button>
+              ))}
+              <Button color="inherit" sx={{ textTransform: "none" }}>
+                <PersonOutlineOutlinedIcon sx={{ mr: 1 }} />
+                Landlords
               </Button>
-            ))}
-            <Button color="inherit" sx={{ textTransform: "none" }}>
-              <PersonOutlineOutlinedIcon sx={{ mr: 1 }} />
-              Landlords
+            </Box>
+
+            <Button
+              variant="contained"
+              onClick={handleDialogToggle}
+              color="secondary"
+              sx={{
+                display: { xs: "none", md: "flex" },
+                backgroundColor: "#E0D8C3",
+                "&:hover": {
+                  backgroundColor: "#4D4D4D",
+                  color: "#fff",
+                },
+                color: "#000",
+                borderRadius: "30px",
+                textTransform: "none",
+                px: { xs: 2, sm: 2, md: 2, lg: "40px" },
+                py: "10px",
+                // mr: 3,
+                width: "fit-content",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Login/Register
             </Button>
+
+            {/* Mobile Menu Icon */}
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ display: { xs: "block", md: "none" } }}
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
           </Box>
-
-          <Button
-            variant="contained"
-            onClick={handleDialogToggle}
-            color="secondary"
-            sx={{
-              display: { xs: "none", md: "flex" },
-              backgroundColor: "#E0D8C3",
-              "&:hover": {
-                backgroundColor: "#4D4D4D",
-                color: "#fff",
-              },
-              color: "#000",
-              borderRadius: "30px",
-              textTransform: "none",
-              px: { xs: 2, sm: 2, md: 2, lg: "40px" },
-              py: "10px",
-              // mr: 3,
-              width: "fit-content",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Login/Register
-          </Button>
-
-          {/* Mobile Menu Icon */}
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ display: { xs: "block", md: "none" } }}
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
         </Toolbar>
       </AppBar>
 
@@ -175,7 +176,7 @@ const PropertyNavbar = () => {
               m: 2,
             }}
           >
-             Login/Register
+            Login/Register
           </Button>
         </Box>
       </Drawer>

@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={lato.className}>
-        {isMounted && pathname !== "/property-list" && <NavbarIndex />}
-        {isMounted && pathname === "/property-list" && <PropertyNavbar />}
+        {isMounted && pathname === "/" && <NavbarIndex />}
+        {isMounted && pathname !== "/" && <PropertyNavbar />}
         <Box suppressHydrationWarning>{children}</Box>
         {isMounted && <FooterIndex />}
       </body>

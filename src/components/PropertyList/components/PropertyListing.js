@@ -12,7 +12,7 @@ import {
   Chip,
   IconButton,
 } from "@mui/material";
-import Image from "next/image"; // Assuming you're using Next.js
+import { useRouter } from "next/navigation";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
@@ -21,6 +21,7 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 const PropertyListing = () => {
   const [sort, setSort] = useState("Default");
   const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
 
   const handleSortChange = (event) => {
     setSort(event.target.value);
@@ -30,9 +31,14 @@ const PropertyListing = () => {
     setCurrentPage(page);
   };
 
+  const handlePropertyClick = (id) => {
+    router.push(`/property-list/property-details/${id}`);
+  };
+
   const properties = [
     {
       id: 1,
+      type: "Apartment",
       title: "Diamond Manor Apartment",
       location: "22-05 Astoria Blvd, Astoria",
       beds: 4,
@@ -45,102 +51,111 @@ const PropertyListing = () => {
     },
     {
       id: 2,
-      title: "Diamond Manor Apartment",
-      location: "22-05 Astoria Blvd, Astoria",
-      beds: 4,
-      baths: 2,
-      sqft: 150,
-      price: 6500,
-      yearsAgo: 4,
-      image: "/images/property1.svg",
+      type: "Modern Villa",
+      title: "Gorgeous Villa Bay",
+      location: "325 E 84th St, New York",
+      beds: 2,
+      baths: 1,
+      sqft: 120,
+      price: 8000,
+      yearsAgo: 5,
+      image: "/images/porperty2.svg",
       tag: "For Sale",
     },
     {
       id: 3,
-      title: "Diamond Manor Apartment",
-      location: "22-05 Astoria Blvd, Astoria",
-      beds: 4,
-      baths: 2,
-      sqft: 150,
-      price: 6500,
-      yearsAgo: 4,
-      image: "/images/property1.svg",
+      type: "Apartment",
+      title: "Anyway Apartments",
+      location: "932 1st Avenue NY",
+      beds: 3,
+      baths: 1,
+      sqft: 330,
+      price: 150,
+      yearsAgo: 5,
+      image: "/images/porperty3.svg",
       tag: "For Sale",
     },
     {
       id: 4,
-      title: "Luxury Villa",
-      location: "10-23 Park Ave, Brooklyn",
-      beds: 5,
-      baths: 3,
-      sqft: 250,
-      price: 12500,
-      yearsAgo: 2,
-      image: "/images/property1.svg",
+      type: "Apartment",
+      title: "Selway Apartments",
+      location: "932 1st Avenue NY",
+      beds: 3,
+      baths: 1,
+      sqft: 3300,
+      price: 150,
+      yearsAgo: 5,
+      image: "/images/porperty4.svg",
       tag: "For Sale",
     },
     {
       id: 5,
-      title: "Ocean View Condo",
+      type: "Town House",
+      title: "House on the Hollywood",
       location: "15-45 Ocean Blvd, Miami",
       beds: 3,
       baths: 2,
       sqft: 200,
       price: 8500,
       yearsAgo: 3,
-      image: "/images/property1.svg",
+      image: "/images/porperty5.svg",
       tag: "For Sale",
     },
     {
       id: 6,
-      title: "Green Hill House",
-      location: "30-25 Green Rd, California",
+      type: "Apartment",
+      title: "Luxury Family Home",
+      location: "19-33 Ditmars Blvd, Astoria",
       beds: 6,
       baths: 4,
       sqft: 350,
       price: 9500,
       yearsAgo: 1,
-      image: "/images/property1.svg",
+      image: "/images/porperty6.svg",
       tag: "For Sale",
     },
     {
       id: 7,
-      title: "Green Hill House",
-      location: "30-25 Green Rd, California",
+      type: "Apartment",
+      title: "Eaton Garth Penthouse",
+      location: "25-25 Broadway, Astoria",
       beds: 6,
       baths: 4,
       sqft: 350,
       price: 9500,
       yearsAgo: 1,
-      image: "/images/property1.svg",
+      image: "/images/porperty7.svg",
       tag: "For Sale",
     },
     {
       id: 8,
-      title: "Green Hill House",
-      location: "30-25 Green Rd, California",
+      type: "Apartment",
+      title: "Skyper Pool Apartment",
+      location: "318 E 84th St, New York",
       beds: 6,
       baths: 4,
       sqft: 350,
       price: 9500,
       yearsAgo: 1,
-      image: "/images/property1.svg",
+      image: "/images/porperty2.svg",
       tag: "For Sale",
     },
     {
       id: 9,
-      title: "Green Hill House",
-      location: "30-25 Green Rd, California",
+      type: "Apartment",
+      title: "North Dillard Street",
+      location: "20-30 Steinway St, Queens",
       beds: 6,
       baths: 4,
       sqft: 350,
       price: 9500,
       yearsAgo: 1,
-      image: "/images/property1.svg",
+      image: "/images/porperty4.svg",
       tag: "For Sale",
     },
     {
       id: 10,
+      type: "Apartment",
       title: "Green Hill House",
       location: "30-25 Green Rd, California",
       beds: 6,
@@ -148,11 +163,12 @@ const PropertyListing = () => {
       sqft: 350,
       price: 9500,
       yearsAgo: 1,
-      image: "/images/property1.svg",
+      image: "/images/porperty4.svg",
       tag: "For Sale",
     },
     {
       id: 11,
+      type: "Apartment",
       title: "Green Hill House",
       location: "30-25 Green Rd, California",
       beds: 6,
@@ -160,7 +176,7 @@ const PropertyListing = () => {
       sqft: 350,
       price: 9500,
       yearsAgo: 1,
-      image: "/images/property1.svg",
+      image: "/images/porperty6.svg",
       tag: "For Sale",
     },
   ];
@@ -192,25 +208,33 @@ const PropertyListing = () => {
         <Typography variant="body1">
           Showing 1 – {properties.length} of {properties.length} results
         </Typography>
-       <Box sx={{display: "flex", gap: 2, alignItems: "center"}}>
-        <Typography>Sort By</Typography>
-       <FormControl
-          variant="outlined"
-          size="small"
-          sx={{ "& .MuiOutlinedInput-root": { border: "none" } }}
-        >
-          <Select value={sort} onChange={handleSortChange} sx={{"& .MuiOutlinedInput-root": { border: "none" }}}>
-            <MenuItem value="Default">Default</MenuItem>
-            <MenuItem value="Price">Price</MenuItem>
-            <MenuItem value="Newest">Newest</MenuItem>
-          </Select>
-        </FormControl>
-       </Box>
+        <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+          <Typography>Sort By</Typography>
+          <FormControl
+            variant="outlined"
+            size="small"
+            sx={{ "& .MuiOutlinedInput-root": { border: "none" } }}
+          >
+            <Select
+              value={sort}
+              onChange={handleSortChange}
+              sx={{ "& .MuiOutlinedInput-root": { border: "none" } }}
+            >
+              <MenuItem value="Default">Default</MenuItem>
+              <MenuItem value="Price">Price</MenuItem>
+              <MenuItem value="Newest">Newest</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </Box>
 
       <Box>
         {currentProperties.map((property) => (
-          <Box key={property.id} sx={{ py: 2 }}>
+          <Box
+            key={property.id}
+            sx={{ py: 2, cursor: "pointer" }}
+            onClick={() => handlePropertyClick(property.id)}
+          >
             <Box
               sx={{
                 border: "2px solid #D8D8D8",
@@ -221,6 +245,8 @@ const PropertyListing = () => {
                 backgroundColor: "#fff",
                 p: "14px",
                 justifyContent: "space-between",
+                transition: "transform 0.3s ease-in-out",
+                "&:hover": { transform: "scale(1.02)" },
               }}
             >
               <Box
@@ -310,7 +336,7 @@ const PropertyListing = () => {
                     variant="subtitle2"
                     sx={{ color: "#B3A87A", fontSize: "17px" }}
                   >
-                    Apartment
+                    {property.type}
                   </Typography>
                   <Typography
                     sx={{ fontWeight: 600, fontSize: "22px", color: "#484848" }}
