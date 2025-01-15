@@ -15,8 +15,8 @@ function Heading() {
 
     // Capitalize the segment for display
     const displayName = segment
-      .replace(/-/g, " ") // Replace dashes with spaces
-      .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize each word
+      .replace(/-/g, " ") 
+      .replace(/\b\w/g, (char) => char.toUpperCase()); 
 
     return isLast ? (
       <Typography key={routePath} color="text.primary">
@@ -36,13 +36,14 @@ function Heading() {
   });
 
   return (
-   <Box sx={{ mt: 4, px: 3}}>
+   <Box sx={{ py: 4, px: {xs: 1, sm: 3}}}>
      <Breadcrumbs aria-label="breadcrumb" separator={<ArrowForwardIosIcon sx={{fontSize: "10px"}}/>}>
       <MuiLink component={Link} href="/" underline="hover" color="inherit">
         Home
       </MuiLink>
       {breadcrumbLinks}
     </Breadcrumbs>
+    <Typography sx={{ fontSize: "37px", fontWeight: 600, color: "#484848" }}>Properties - list</Typography>
    </Box>
   );
 }

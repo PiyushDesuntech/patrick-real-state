@@ -28,7 +28,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Image from "next/image";
 
-const PropertyNavbar = () => {
+const PropertyNavbar = (properties) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isLoginView, setIsLoginView] = useState(true);
@@ -74,6 +74,7 @@ const PropertyNavbar = () => {
             px: { md: 4 },
             pt: 2,
             zIndex: 1100,
+            boxShadow: '0px 4px 26px rgba(0, 0, 0, 0.1)',
           }}
         >
           <Image

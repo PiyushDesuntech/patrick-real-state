@@ -1,6 +1,5 @@
 {
   "/property-list/page": "app/property-list/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/property-list/property-details/[id]/page": "app/property-list/property-details/[id]/page.js"
+  "/property-search/page": "app/property-search/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

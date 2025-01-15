@@ -283,7 +283,7 @@ const PropertyListing = ()=>{
             tag: "For Sale"
         }
     ];
-    const itemsPerPage = 10;
+    const itemsPerPage = 9;
     const totalPages = Math.ceil(properties.length / itemsPerPage);
     // Slice properties for the current page
     const currentProperties = properties.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -344,7 +344,16 @@ const PropertyListing = ()=>{
                                     value: sort,
                                     onChange: handleSortChange,
                                     sx: {
+                                        "& .MuiOutlinedInput-notchedOutline": {
+                                            border: "none"
+                                        },
                                         "& .MuiOutlinedInput-root": {
+                                            boxShadow: "none"
+                                        },
+                                        "&:hover .MuiOutlinedInput-notchedOutline": {
+                                            border: "none"
+                                        },
+                                        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                             border: "none"
                                         }
                                     },
@@ -354,7 +363,7 @@ const PropertyListing = ()=>{
                                             children: "Default"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 223,
+                                            lineNumber: 236,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -362,7 +371,7 @@ const PropertyListing = ()=>{
                                             children: "Price"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 224,
+                                            lineNumber: 237,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -370,7 +379,7 @@ const PropertyListing = ()=>{
                                             children: "Newest"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 225,
+                                            lineNumber: 238,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -461,12 +470,12 @@ const PropertyListing = ()=>{
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                        lineNumber: 272,
+                                                        lineNumber: 285,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                    lineNumber: 271,
+                                                    lineNumber: 284,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -487,26 +496,6 @@ const PropertyListing = ()=>{
                                                             },
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$FavoriteBorder$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                                lineNumber: 295,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                            lineNumber: 284,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$IconButton$2f$IconButton$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__IconButton$3e$__["IconButton"], {
-                                                            sx: {
-                                                                borderRadius: "3px",
-                                                                background: "rgba(32, 32, 32, 0.3)",
-                                                                color: "#fff",
-                                                                "&:hover": {
-                                                                    background: "#E0D8C3",
-                                                                    color: "#4D4D4D"
-                                                                }
-                                                            },
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$SyncAltOutlined$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                                                                fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
                                                                 lineNumber: 308,
                                                                 columnNumber: 23
                                                             }, this)
@@ -525,11 +514,7 @@ const PropertyListing = ()=>{
                                                                     color: "#4D4D4D"
                                                                 }
                                                             },
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$ReplyOutlined$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                sx: {
-                                                                    transform: "scaleX(-1)"
-                                                                }
-                                                            }, void 0, false, {
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$SyncAltOutlined$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
                                                                 lineNumber: 321,
                                                                 columnNumber: 23
@@ -538,17 +523,41 @@ const PropertyListing = ()=>{
                                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
                                                             lineNumber: 310,
                                                             columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$IconButton$2f$IconButton$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__IconButton$3e$__["IconButton"], {
+                                                            sx: {
+                                                                borderRadius: "3px",
+                                                                background: "rgba(32, 32, 32, 0.3)",
+                                                                color: "#fff",
+                                                                "&:hover": {
+                                                                    background: "#E0D8C3",
+                                                                    color: "#4D4D4D"
+                                                                }
+                                                            },
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$ReplyOutlined$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                sx: {
+                                                                    transform: "scaleX(-1)"
+                                                                }
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
+                                                                lineNumber: 334,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
+                                                            lineNumber: 323,
+                                                            columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                    lineNumber: 283,
+                                                    lineNumber: 296,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 259,
+                                            lineNumber: 272,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -568,7 +577,7 @@ const PropertyListing = ()=>{
                                                     children: property.type
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                    lineNumber: 335,
+                                                    lineNumber: 348,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -580,7 +589,7 @@ const PropertyListing = ()=>{
                                                     children: property.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                    lineNumber: 341,
+                                                    lineNumber: 354,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -599,14 +608,14 @@ const PropertyListing = ()=>{
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                            lineNumber: 355,
+                                                            lineNumber: 368,
                                                             columnNumber: 21
                                                         }, this),
                                                         property.location
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                    lineNumber: 346,
+                                                    lineNumber: 359,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -623,7 +632,7 @@ const PropertyListing = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                            lineNumber: 361,
+                                                            lineNumber: 374,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -634,7 +643,7 @@ const PropertyListing = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                            lineNumber: 364,
+                                                            lineNumber: 377,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -645,25 +654,25 @@ const PropertyListing = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                            lineNumber: 367,
+                                                            lineNumber: 380,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                                    lineNumber: 358,
+                                                    lineNumber: 371,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 327,
+                                            lineNumber: 340,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                    lineNumber: 252,
+                                    lineNumber: 265,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -689,7 +698,7 @@ const PropertyListing = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 384,
+                                            lineNumber: 397,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -701,29 +710,29 @@ const PropertyListing = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                            lineNumber: 394,
+                                            lineNumber: 407,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                                    lineNumber: 374,
+                                    lineNumber: 387,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                            lineNumber: 238,
+                            lineNumber: 251,
                             columnNumber: 13
                         }, this)
                     }, property.id, false, {
                         fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                        lineNumber: 233,
+                        lineNumber: 246,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                lineNumber: 231,
+                lineNumber: 244,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -760,14 +769,14 @@ const PropertyListing = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                        lineNumber: 405,
+                        lineNumber: 418,
                         columnNumber: 9
                     }, this),
                     " "
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PropertyList/components/PropertyListing.js",
-                lineNumber: 404,
+                lineNumber: 417,
                 columnNumber: 7
             }, this)
         ]

@@ -181,7 +181,7 @@ const PropertyListing = () => {
     },
   ];
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 9;
   const totalPages = Math.ceil(properties.length / itemsPerPage);
 
   // Slice properties for the current page
@@ -218,7 +218,20 @@ const PropertyListing = () => {
             <Select
               value={sort}
               onChange={handleSortChange}
-              sx={{ "& .MuiOutlinedInput-root": { border: "none" } }}
+              sx={{
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: "none", 
+                },
+                "& .MuiOutlinedInput-root": {
+                  boxShadow: "none", 
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  border: "none", 
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: "none", 
+                },
+              }}
             >
               <MenuItem value="Default">Default</MenuItem>
               <MenuItem value="Price">Price</MenuItem>
