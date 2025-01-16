@@ -21,8 +21,6 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import GridViewIcon from "@mui/icons-material/GridView";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 const PropertyListingGrid = () => {
   const [sort, setSort] = useState("Relevance");

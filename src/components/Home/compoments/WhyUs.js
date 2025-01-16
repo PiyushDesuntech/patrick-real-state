@@ -30,7 +30,7 @@ const data = [
   },
 ];
 
-const ResponsiveCards = () => {
+const WhyUs = () => {
   return (
     <Container maxWidth="xl">
       <Box sx={{ padding: {md: 7}, mt: 2 }}>
@@ -108,4 +108,4 @@ const ResponsiveCards = () => {
   );
 };
 
-export default ResponsiveCards;
+export default WhyUs;

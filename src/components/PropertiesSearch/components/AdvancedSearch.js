@@ -45,7 +45,7 @@ const AdvancedSearch = () => {
       </Typography>
 
       {/* Keyword Field */}
-      <Box display="flex" alignItems="center" mb={2}>
+      <Box display="flex" alignItems="center" >
       <TextField
         fullWidth
         variant="outlined"
@@ -72,7 +72,7 @@ const AdvancedSearch = () => {
       />
 
       {/* Distance Slider */}
-      <Typography gutterBottom>Distance: {distance} miles</Typography>
+      {/* <Typography gutterBottom>Distance: {distance} miles</Typography>
       <Slider
         value={distance}
         onChange={(e, value) => setDistance(value)}
@@ -97,7 +97,7 @@ const AdvancedSearch = () => {
           },
           mb: 2
         }}
-      />
+      /> */}
 
       {/* Dropdown Menus */}
       <Select

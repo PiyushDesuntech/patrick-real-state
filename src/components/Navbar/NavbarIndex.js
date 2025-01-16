@@ -27,11 +27,18 @@ import CloseIcon from "@mui/icons-material/Close";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Image from "next/image";
+import { Menu, MenuItem } from "@mui/material";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const NavbarIndex = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isLoginView, setIsLoginView] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const [inputUsername, setInputUsername] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -45,6 +52,12 @@ const NavbarIndex = () => {
     setDrawerOpen(open);
   };
 
+  const staticCredentials = {
+    username: "testuser",
+    password: "password123",
+    token: "staticToken123",
+  };
+
   const handleDialogToggle = () => {
     setDialogOpen(!dialogOpen);
   };
@@ -52,6 +65,16 @@ const NavbarIndex = () => {
   const switchView = () => {
     setIsLoginView(!isLoginView);
   };
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const isMenuOpen = Boolean(anchorEl);
 
   const navItems = [
     "Rent",
@@ -61,7 +84,7 @@ const NavbarIndex = () => {
     "Market Insight",
     "Resources",
     "About",
-    "Landlords",
+    // "Landlords",
   ];
 
   return (
@@ -86,58 +109,85 @@ const NavbarIndex = () => {
             height={66}
           />
 
-          <Box
-            sx={{ display: { xs: "none", md: "flex" }, gap: { md: 0, lg: 4 } }}
-          >
-            {navItems.slice(0, -1).map((item, index) => (
+          <Box sx={{display: "flex"}}>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: { md: 0, lg: 0 },
+              }}
+            >
+              {navItems.slice(0, -1).map((item, index) => (
+                <Button
+                endIcon={<KeyboardArrowDownIcon/>}
+                  key={index}
+                  color="inherit"
+                  sx={{ textTransform: "none", fontSize: "16px" }}
+                >
+                  {item}
+                </Button>
+              ))}
               <Button
-                key={index}
+              endIcon={<KeyboardArrowDownIcon/>}
                 color="inherit"
-                sx={{ textTransform: "none", fontSize: "16px" }}
+                sx={{ textTransform: "none" }}
+                onClick={handleMenuOpen}
               >
-                {item}
+                <PersonOutlineOutlinedIcon sx={{ mr: 1 }} />
+                Landlords
               </Button>
-            ))}
-            <Button color="inherit" sx={{ textTransform: "none" }}>
-              <PersonOutlineOutlinedIcon sx={{ mr: 1 }} />
-              Landlords
+              <Menu
+                anchorEl={anchorEl}
+                open={isMenuOpen}
+                onClose={handleMenuClose}
+                PaperProps={{
+                  style: {
+                    marginTop: "8px",
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                  },
+                }}
+              >
+                <MenuItem onClick={handleMenuClose}>
+                  Landlord Resources
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>Landlord Login</MenuItem>
+              </Menu>
+            </Box>
+
+            <Button
+              variant="contained"
+              onClick={handleDialogToggle}
+              color="secondary"
+              sx={{
+                display: { xs: "none", md: "flex" },
+                backgroundColor: "#E0D8C3",
+                "&:hover": {
+                  backgroundColor: "#4D4D4D",
+                  color: "#fff",
+                },
+                color: "#000",
+                borderRadius: "30px",
+                textTransform: "none",
+                px: { xs: 2, sm: 2, md: 2, lg: "40px" },
+                py: "10px",
+                // mr: 3,
+                width: "fit-content",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Login/Register
             </Button>
+
+            {/* Mobile Menu Icon */}
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ display: { xs: "block", md: "none" } }}
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
           </Box>
-
-          <Button
-            variant="contained"
-            onClick={handleDialogToggle}
-            color="secondary"
-            sx={{
-              display: { xs: "none", md: "flex" },
-              backgroundColor: "#E0D8C3",
-              "&:hover": {
-                backgroundColor: "#4D4D4D",
-                color: "#fff",
-              },
-              color: "#000",
-              borderRadius: "30px",
-              textTransform: "none",
-              px: { xs: 2, sm: 2, md: 2, lg: "40px" },
-              py: "10px",
-              // mr: 3,
-              width: "fit-content",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Login/Register
-          </Button>
-
-          {/* Mobile Menu Icon */}
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ display: { xs: "block", md: "none" } }}
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
         </Toolbar>
       </AppBar>
 
@@ -155,6 +205,9 @@ const NavbarIndex = () => {
                 <ListItemText primary={text} />
               </ListItem>
             ))}
+            <ListItem >
+                <ListItemText primary="Landlord" />
+              </ListItem>
           </List>
           <Button
             variant="contained"
@@ -175,7 +228,7 @@ const NavbarIndex = () => {
               m: 2,
             }}
           >
-             Login/Register
+            Login/Register
           </Button>
         </Box>
       </Drawer>
