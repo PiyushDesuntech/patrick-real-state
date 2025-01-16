@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 2, "column": 0}, "map": {"version":3,"sources":["file://E%3A/My%20Projects/Desun/Real%20state/Patrick-Real%20State/patrick-real-state/src/app/globals.css"],"sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap');"],"names":[],"mappings":""}},
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
